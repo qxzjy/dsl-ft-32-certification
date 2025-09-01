@@ -1,0 +1,5 @@
+apache-airflow-providers-postgres[amazon]
+apache-airflow-providers-common-sql
+psycopg2-binary
+pydantic
+pandas
