@@ -18,7 +18,8 @@ def _fetch_db(**context):
     # Connect to PostgreSQL and get data
     postgres_hook = PostgresHook(postgres_conn_id="postgres_default")
     engine = postgres_hook.get_sqlalchemy_engine()
-    data = pd.read_sql(f"SELECT * FROM {Variable.get("TABLE_FRAUD")} WHERE is_fraud IS NULLf", engine, index_col="id")
+    stmt = "SELECT * FROM {} WHERE price IS NULL".format(Variable.get("TABLE_FRAUD"))
+    data = pd.read_sql(stmt, engine, index_col="id")
 
     if len(data) != 0:
         # Separate target variables from features
@@ -124,7 +125,7 @@ with DAG(dag_id="fraud_detection", start_date=datetime(2025, 8, 28), schedule_in
         python_callable=_send_notification
     )
 
-    end = DummyOperator(task_id="end", trigger_rule="all_done")
+    end = DummyOperator(task_id="end", trigger_rule="none_failed")
 
     start >> fetch_db >> [predict, end]
     predict >> [load_data, send_notification] >> end
