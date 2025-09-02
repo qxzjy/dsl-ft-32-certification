@@ -18,7 +18,7 @@ def _fetch_db(**context):
     # Connect to PostgreSQL and get data
     postgres_hook = PostgresHook(postgres_conn_id="postgres_default")
     engine = postgres_hook.get_sqlalchemy_engine()
-    data = pd.read_sql('SELECT * FROM fraud_detection WHERE is_fraud IS NULL', engine, index_col="id")
+    data = pd.read_sql(f"SELECT * FROM {Variable.get("TABLE_FRAUD")} WHERE is_fraud IS NULLf", engine, index_col="id")
 
     if len(data) != 0:
         # Separate target variables from features
