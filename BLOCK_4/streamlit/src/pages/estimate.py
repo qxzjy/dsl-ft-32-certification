@@ -66,7 +66,7 @@ with st.form("rental_price_predict"):
 
         write_db(pd.DataFrame.from_dict([payload]))
 
-        st.write('Dans quelques minutes vous retrouverez votre estimation directement dans la page "📊 Nos estimations de biens".')
+        st.write('Dans quelques instants vous retrouverez votre estimation directement dans la page "📊 Nos estimations de biens".')
 
         
 
