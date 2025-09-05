@@ -39,7 +39,6 @@ class PredictionFeatures(BaseModel):
     location_score: float
     distance_to_center: float
 
-
 @app.post("/predict", tags=["Machine-Learning"])
 async def predict(predictionFeatures: PredictionFeatures):
     """
@@ -75,7 +74,7 @@ async def batch_predict(file: UploadFile = File(...)):
     """
     try:
         # Read file
-        df = pd.read_csv(file.file)
+        df = pd.read_csv(file.file, index_col="id")
 
         # Load model
         loaded_model= mlflow.sklearn.load_model(f"models:/{MODEL_NAME}/{MODEL_VERSION}")
