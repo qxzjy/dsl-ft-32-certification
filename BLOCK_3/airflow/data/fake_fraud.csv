@@ -1,0 +1,6 @@
+"category","merchant","amt","gender","last","first","lat","long","city_pop","zip","job","dob"
+"grocery_pos","fraud_Goldner,Kovacek and Abbott",326.94,"M","Perry","William",30.459,-90.9027,71335,70726,"Herbalist",1994-05-31
+"grocery_pos","fraud_Osinski,Ledner and Leuschke",353.08,"F","Cabrera","Ashley",27.633000000000003,-80.4031,105638,32960,"Librarian,public",1986-05-07
+"gas_transport","fraud_Huels-Hahn",7.82,"M","Davidson","Dennis",42.52,-78.6847,7728,14141,"Scientist,research (maths)",1959-03-30
+"gas_transport","fraud_Schaefer,Maggio and Daugherty",8.32,"F","Morgan","Alyssa",34.048,-85.9246,67082,35901,"Physiological scientist",1963-0
+"grocery_pos","fraud_Huel,Hammes and Witting",279.78,"M","Davidson","Dennis",42.52,-78.6847,7728,14141,"Scientist,research (maths)",1959-03-30
