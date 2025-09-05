@@ -5,10 +5,10 @@ docker_env:
   environment:
     [
       "MLFLOW_TRACKING_URI",
+      "MLFLOW_EXPERIMENT_NAME",
       "AWS_ACCESS_KEY_ID",
       "AWS_SECRET_ACCESS_KEY",
-      "BACKEND_STORE_URI",
-      "ARTIFACT_ROOT"
+      "DB_URI"
     ]
 entry_points:
   main:
