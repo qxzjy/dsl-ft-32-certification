@@ -6,8 +6,8 @@ A detailed schema design for the OLAP system, including star or snowflake schema
 ## Task
 **OLAP Data Model :**
 - Design a star or snowflake schema that supports complex queries and aggregations. => OK
-- Propose a strategy for handling large-scale joins, subqueries, and time-series analysis. => Directement le schéma ?
-- Include a plan for pre-aggregations, materialized views, or summary tables to optimize query performance. => Directement le schéma ?
+- Propose a strategy for handling large-scale joins, subqueries, and time-series analysis. => OK (Dimensions)
+- Include a plan for pre-aggregations, materialized views, or summary tables to optimize query performance. => OK (Pre-aggregations directly on FACT tables)
 
 ## Data source
 **Analytical Data (OLAP) :**
