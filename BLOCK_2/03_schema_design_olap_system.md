@@ -25,3 +25,7 @@ Aggregated and historical data used for reporting and analysis.
 ![olap_fact_product_performance](img/olap_fact_product_performance.png)
 ![olap_fact_fraud_analysis](img/olap_fact_fraud_analysis.png)
 ![olap_fact_compliance_audit](img/olap_fact_compliance_audit.png)
+
+TODO : 
+- 3 requêtes
+- fichier SQL (avec une View ?) ?

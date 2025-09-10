@@ -49,6 +49,7 @@ COMMIT;
 -- Rollback the transaction if an error occurs
 ROLLBACK;
 ```
+=> Rajouter delete cascade ?
 
 #Partioning => OK
 PARTITION BY RANGE (DateTime);
@@ -56,10 +57,12 @@ PARTITION BY RANGE (DateTime);
 #Sécurité ( data encryption, role-based access control, and audit logging.) => OK
 
 data encryption (pgcrypto)
-FullNameHash varchar
-ex :
-INSERT INTO Customer (Email, FullName) VALUES ("customer1@test.com", pgp_sym_encrypt("John Doe","secret_key));
-SELECT CustomerID, Email, pgp_sym_decrypt(FullName, "secret_key") as FullName FROM Customer;
+```sql
+INSERT INTO Customer (UserName, Password, Email, FullName)
+VALUES ("John42", crypt("password_john", gen_salt("bf")), "john.doe@stripe.com", "John Doe"); -- Insert the crypted password
+
+SELECT (Password = crypt("password_john", Password)) AS IsGoodPassword FROM Customer ; -- Return true if password match
+```
 => permet d'identifier le client (PII : Personal Identifiable Information)
 
 RBAC
