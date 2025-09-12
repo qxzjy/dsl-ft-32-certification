@@ -243,9 +243,9 @@ db.Customer.createIndex( { "preferences.device": 1,
 | **Batch** | Ingestion, chargement et transformation des données pour de l'exploration/expérimentation | Amazon S3 |
 | **Stream** | Ingestion, chargement et transformation des données en temps-réels (module Change Data Capture) pour de l'analytique (fraudes) | Snowflake |
 
-## Cadre de Sécurité et de Conformité
+## Cadre de sécurité et de conformité
 
-### Chiffrement des Données
+### Chiffrement des données
 
 **Données au repos**
 - Le chiffrement AES-256 est utilisé pour toutes les données des systèmes OLTP, OLAP et NoSQL.
@@ -259,7 +259,7 @@ db.Customer.createIndex( { "preferences.device": 1,
 - Centralisation, gestion et rotation des clés via un KMS (Key Management System).
 - Application d'un contrôle d’accès strict aux clés, distinct des autorisations d’accès aux données.
 
-### Contrôle d’Accès
+### Contrôle d’accès
 
 **RBAC (Role-Based Access Control)**
 - Définition de rôles précis pour tous les intervenants (Administrateur, Développeur, Utilisateur en lecture).
