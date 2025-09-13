@@ -32,13 +32,17 @@ However, eventhough we managed to build powerful algorithms, the hard thing is n
 
 ```bash
 https://github.com/qxzjy/dsl-ft-32-certification.git
-cd dsl-ft-32-certification/BLOCK_3/airflow
+
+cd dsl-ft-32-certification/BLOCK_3
 ```
 
 2. Init and launch Airflow
 
 ```bash
+cd airflow
+
 docker-compose up airflow-init
+
 docker-compose up
 ```
 
