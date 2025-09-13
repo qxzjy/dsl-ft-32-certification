@@ -41,7 +41,7 @@ with DAG(dag_id="training_ec2", start_date=datetime(2025, 8, 28), schedule_inter
 
     # Step 1: Poll Jenkins Job Status
     @task
-    def _poll_jenkins_job():
+    def poll_jenkins_job():
         """Poll Jenkins for the job status and check for successful build."""
 
         # Step 1.1: Get the latest build number from the job API
@@ -220,7 +220,7 @@ with DAG(dag_id="training_ec2", start_date=datetime(2025, 8, 28), schedule_inter
         trigger_rule=TriggerRule.ALL_DONE,
     )
     
-    jenkins_poll = _poll_jenkins_job()
+    jenkins_poll = poll_jenkins_job()
     check_instance = check_ec2_status(create_ec2_instance.output)
     get_ip = get_ec2_public_ip(create_ec2_instance.output)
     run_train = run_training_via_paramiko(get_ip)
