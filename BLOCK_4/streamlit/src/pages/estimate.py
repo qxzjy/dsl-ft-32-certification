@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import requests
 from utils.common import write_db
 
 st.title("Est'Immo 🏠")
@@ -47,7 +48,7 @@ with st.form("rental_price_predict"):
         location_score = st.slider("Qualité du quartier", min_value=0, max_value=10, value=5, step=1)
         
 
-    submitted = st.form_submit_button("Estimer")
+    submitted = st.form_submit_button("Éstimer")
 
     if submitted:
 
@@ -63,10 +64,16 @@ with st.form("rental_price_predict"):
             "location_score": location_score,
             "distance_to_center": distance_center
         }
+        
+        request = requests.post("https://qxzjy-fastapi-housing-prices.hf.space/predict", json=payload)
+        response = request.json()
+        
+        record = pd.DataFrame.from_dict([payload])
+        record["price"] = response['prediction']
 
-        write_db(pd.DataFrame.from_dict([payload]))
-
-        st.write('Dans quelques instants vous retrouverez votre estimation directement dans la page "📊 Nos estimations de biens".')
+        write_db(record)
+        
+        st.write(f"Éstimation de mon bien : {round(response['prediction'], 2)} $")
 
         
 
