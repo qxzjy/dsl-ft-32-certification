@@ -35,6 +35,21 @@ def _fetch_api(**context):
     context["task_instance"].xcom_push(key="json_filename", value=json_filename)
 
 
+def _validate_data(**context):
+    # Filename from the context
+    json_filename = context["task_instance"].xcom_pull(key="json_filename")
+
+    # Load the temporary JSON file
+    with open(f"/tmp/{json_filename}", "r") as f:
+        raw_json_data = json.load(f)
+
+    # Validate data
+    try:
+        PredictionFeatures(**ast.literal_eval(raw_json_data))  
+    except ValidationError as e:
+        logging.error(e.errors())
+        
+        
 def _transform_data(**context):
     # Filename from the context
     json_filename = context["task_instance"].xcom_pull(key="json_filename")
@@ -66,21 +81,6 @@ def _transform_data(**context):
     context["task_instance"].xcom_push(key="csv_filename", value=csv_filename)
 
 
-def _validate_data(**context):
-    # Filename from the context
-    json_filename = context["task_instance"].xcom_pull(key="json_filename")
-
-    # Load the temporary JSON file
-    with open(f"/tmp/{json_filename}", "r") as f:
-        raw_json_data = json.load(f)
-
-    # Validate data
-    try:
-        PredictionFeatures(**ast.literal_eval(raw_json_data))  
-    except ValidationError as e:
-        logging.error(e.errors())
-
-
 def _load_data(**context):
     # Filename from the context
     csv_filename = context["task_instance"].xcom_pull(key="csv_filename")
@@ -102,15 +102,15 @@ with DAG(dag_id="etl_api", start_date=datetime(2025, 8, 28), schedule_interval=N
         task_id="fetch_api",
         python_callable=_fetch_api
     )
+    
+    validate_data = PythonOperator(
+        task_id="validate_data",
+        python_callable=_validate_data
+    )
 
     transform_data = PythonOperator(
         task_id="transform_data",
         python_callable=_transform_data
-    )
-
-    validate_data = PythonOperator(
-        task_id="validate_data",
-        python_callable=_validate_data
     )
 
     load_data = PythonOperator(
@@ -120,4 +120,4 @@ with DAG(dag_id="etl_api", start_date=datetime(2025, 8, 28), schedule_interval=N
 
     end = DummyOperator(task_id="end")
 
-    start >> fetch_api >> transform_data >> validate_data >> load_data >> end
+    start >> fetch_api >> validate_data >> transform_data >> load_data >> end
