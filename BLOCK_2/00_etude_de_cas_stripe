@@ -394,7 +394,7 @@ ORDER BY d.Year;
 <summary>Rechercher tous les journaux d'erreurs créés par un utilisateur administrateur dans la base de données Stripe</summary>
 
 ```javascript
-db.LogData.find({
+db.Log.find({
   dbname: "stripe",
   user: "admin",
   lines: { $elemMatch: { error_severity: "ERROR" } }
