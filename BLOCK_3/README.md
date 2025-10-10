@@ -6,7 +6,7 @@
 
 [ECB](https://www.ecb.europa.eu/press/cardfraud/html/ecb.cardfraudreport202110~cac4c418e8.en.html) is a European institution that defines the broad monetary policy guidelines for the euro area.
 
-In the EU in 2019, the European Central Bank estimated that fraudulent credit card transactions amounted more €1 billion! 😮
+In the EU in 2019, the European Central Bank estimated that fraudulent credit card transactions amounted more €1 billion!
 
 AI can really help solve this issue by detecting fraudulent payments in a very precise manner. This usecase is actually now one of the most famous one among Data Scientists.
 
