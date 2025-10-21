@@ -5,16 +5,16 @@ This repository contains all projects completed as part of the RNCP38777 certifi
 ## List of projects
 
 Block 1: Designing and managing data governance
-- Spotify project (Data Governance)
+- [Spotify project (Data Governance)](BLOCK_1/00_plan_gouvernance.md)
 
 Block 2: Designing and deploying data architectures (for AI)
-- Stripe project (Architecture)
+- [Stripe project (Architecture)](BLOCK_2/00_etude_de_cas_stripe.md)
 
 Block 3: Designing and implementing data pipelines (for AI)
-- ECB project (Workflow Orchestration)
+- [ECB project (Workflow Orchestration)](BLOCK_3/README.md)
 
 Block 4: Building, deploying, and managing AI solutions
-- Est'Immo project (MLOps)
+- [Est'Immo project (MLOps)](BLOCK_4/README.md)
 
 ## Repository Structure
 
