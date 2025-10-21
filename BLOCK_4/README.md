@@ -14,6 +14,10 @@ We were asked to develop an architecture that would enable automatic model inges
 
 [Est'immo demo 🎞️](https://share.vidyard.com/watch/k65E1g7K34f9nWBrEE6zjF)
 
+## Sources
+
+[Machine Learning](https://github.com/qxzjy/housing-prices-ml/) (Repository)
+
 ## Web pages
 
 [Web dashboard](https://qxzjy-streamlit-housing-prices.hf.space/) (Streamlit)\
