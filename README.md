@@ -23,12 +23,14 @@ Block 4: Building, deploying, and managing AI solutions
 ├── BLOCK_1/
 │   ├── img/
 │   ├── 00_plan_gouvernance.md
-│   └── 00_plan_gouvernance.pdf
+│   ├── 00_plan_gouvernance.pdf
+│   └── 01_business_case.pdf
 ├── BLOCK_2/
 │   ├── img/
 │   ├── src/
 │   ├── 00_etude_de_cas_stripe.md
-│   └── 00_etude_de_cas_stripe.pdf
+│   ├── 00_etude_de_cas_stripe.pdf
+│   └── 01_business_case.pdf
 ├── BLOCK_3/
 │   ├── airflow/
 │   ├── data/
