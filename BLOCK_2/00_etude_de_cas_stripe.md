@@ -1,5 +1,7 @@
 # Dossier d'architecture
 
+[Cas d'étude](business_case.pdf)
+
 ## Contexte
 Stripe, leader des technologies financières, veut bâtir une infrastructure de données unifiée et évolutive pour gérer la croissance de ses volumes. L’objectif est d’intégrer ses systèmes transactionnels (OLTP), analytiques (OLAP) et NoSQL afin de traiter d’importantes données, permettre des analyses complexes et exploiter des données non structurées pour la détection de fraude, l’analyse comportementale et les recommandations en temps réel.
 

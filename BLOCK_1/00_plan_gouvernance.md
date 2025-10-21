@@ -1,5 +1,7 @@
 # Plan de gouvernance Spotify
 
+[Cas d'étude](business_case.pdf)
+
 ## Évaluation de la maturité des données et de la gouvernance
 
 Pour établir un plan de gouvernance, il convient de commencer par un état des lieux de l’existant. L’idée est d’identifier les points forts et faibles de l'organisation en place, afin de pouvoir dresser une liste de défis de gouvernance auxquels devra faire face Spotify pour évoluer.
