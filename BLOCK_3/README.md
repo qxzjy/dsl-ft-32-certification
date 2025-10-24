@@ -1,6 +1,8 @@
 # Automatic fraud detection 🥷🏻
 
-<center><img src='./data/bce.png' height='200'></center>
+<p align="center">
+   <img src='./data/bce.png' height='150'>
+</p>
 
 ## Description
 
